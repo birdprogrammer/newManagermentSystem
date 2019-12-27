@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-12-20 10:16:45 by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="managermentsystem" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniu.pojo.Examrecord" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="examrecord">
+        <id name="erid" type="java.lang.Integer">
+            <column name="erid"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.woniu.pojo.Stage" embed-xml="true" fetch="select" insert="true" name="stage" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="sid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="score" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="score"/>
+        </property>
+        <property generated="never" lazy="false" name="erdate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="erdate"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="students" optimistic-lock="true" sort="unsorted" table="student">
+            <key on-delete="noaction">
+                <column name="erid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Student" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

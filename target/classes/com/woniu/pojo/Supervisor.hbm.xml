@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-12-20 10:16:45 by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="managermentsystem" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniu.pojo.Supervisor" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="supervisor">
+        <id name="supid" type="java.lang.Integer">
+            <column name="supid"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="supname" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="supname"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="headmasters" optimistic-lock="true" sort="unsorted" table="headmaster">
+            <key on-delete="noaction">
+                <column name="supid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Headmaster" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="teachers" optimistic-lock="true" sort="unsorted" table="teacher">
+            <key on-delete="noaction">
+                <column name="supid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Teacher" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="classeses" optimistic-lock="true" sort="unsorted" table="classes">
+            <key on-delete="noaction">
+                <column name="supid"/>
+            </key>
+            <one-to-many class="com.woniu.pojo.Classes" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-12-20 10:16:45 by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="managermentsystem" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniu.pojo.Student" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="student">
+        <id name="stuid" type="java.lang.Integer">
+            <column name="stuid"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.woniu.pojo.Checkrecord" embed-xml="true" fetch="select" insert="true" name="checkrecord" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="crid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.Classes" embed-xml="true" fetch="select" insert="true" name="classes" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.Examrecord" embed-xml="true" fetch="select" insert="true" name="examrecord" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="erid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.Headmaster" embed-xml="true" fetch="select" insert="true" name="headmaster" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="hid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.Stage" embed-xml="true" fetch="select" insert="true" name="stage" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="sid"/>
+        </many-to-one>
+        <many-to-one class="com.woniu.pojo.Teacher" embed-xml="true" fetch="select" insert="true" name="teacher" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="tid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="stuname" optimistic-lock="true" type="string" unique="false">
+            <column name="stuname"/>
+        </property>
+        <property generated="never" lazy="false" name="sex" optimistic-lock="true" type="string" unique="false">
+            <column name="sex"/>
+        </property>
+        <property generated="never" lazy="false" name="idcard" optimistic-lock="true" type="string" unique="false">
+            <column name="idcard" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="intime" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="intime"/>
+        </property>
+        <property generated="never" lazy="false" name="phone" optimistic-lock="true" type="string" unique="false">
+            <column name="phone"/>
+        </property>
+        <property generated="never" lazy="false" name="address" optimistic-lock="true" type="string" unique="false">
+            <column name="address"/>
+        </property>
+        <property generated="never" lazy="false" name="edutime" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="edutime"/>
+        </property>
+        <property generated="never" lazy="false" name="school" optimistic-lock="true" type="string" unique="false">
+            <column name="school"/>
+        </property>
+        <property generated="never" lazy="false" name="domain" optimistic-lock="true" type="string" unique="false">
+            <column name="domain"/>
+        </property>
+    </class>
+</hibernate-mapping>

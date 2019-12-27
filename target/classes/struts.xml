@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>  
+	<package name="mangermentsystem" extends="struts-default">
+		<action name="save" class="com.woniu.action.UserAction" method="save">
+			<result>/index.jsp</result>
+		</action>
+		<action name="login" class="com.woniu.action.UserAction" method="login">
+			<result name="student" type="redirectAction">/findAll.action</result>
+			<result name="herdmaster" type="redirectAction">/showClasses.action</result>
+			<result name="teacher" type="redirectAction">/teacherFindAll.action</result>
+			<result name="supervisor">/supervisor.jsp</result>
+		</action>
+		<action name="findAll" class="com.woniu.action.StudentAction" method="findAll">
+			<result>/student.jsp</result>
+		</action>
+		<action name="addStudent" class="com.woniu.action.StudentAction" method="addStudent">
+			<result>/student.jsp</result>
+		</action>
+		<action name="findCR" class="com.woniu.action.StudentAction" method="findCR">
+			<result name="findCR">/teacherShowCR.jsp</result>
+		</action>
+		
+		<action name="findOneExam" class="com.woniu.action.ExamrecordAction" method="findOneExam">
+			<result>/studentExam.jsp</result>
+		</action>
+		<action name="addExam" class="com.woniu.action.ExamrecordAction" method="addExam">
+			<result name="addExam">/teacherShowCR.jsp</result>
+		</action>
+		<action name="findCheckRecord" class="com.woniu.action.CheckrecordAction" method="findCheckRecord">
+			<result>/studentCheckrecord.jsp</result>
+		</action>
+		
+		<action name="findAllH" class="com.woniu.action.StudentAction" method="getAll">
+			<result>/headmaster.jsp</result>
+		</action>
+		
+		<!-- 班主任操作 -->
+		
+		
+		<action name="showClasses" class="com.woniu.action.ClassesAction" method="showClasses">
+			<result name="showCla" type="redirectAction">/findAllH.action</result>
+		</action>
+		<action name="changeClass" class="com.woniu.action.StudentAction" method="change_class">
+			<result name="change">/changeClass.jsp</result>
+		</action>
+		<action name="changeC" class="com.woniu.action.StudentAction" method="changeC">
+			<result name="changeC" type="redirectAction">/showClasses.action</result>
+		</action>
+		
+		<!-- teacher -->
+		<action name="teacherFindAll" class="com.woniu.action.TeacherAction" method="teacherFindAll">
+			<result >/teacher.jsp</result>
+		</action>
+		
+		<!-- class -->
+		<action name="findClass" class="com.woniu.action.ClassesAction" method="findClass">
+			<result name="findClass">/teacherClass.jsp</result>
+		</action>
+	</package>
+</struts>

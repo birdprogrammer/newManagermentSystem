@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="managermentsystem" match-name="checkrecord"/>
+  <table-filter match-catalog="managermentsystem" match-name="checktype"/>
+  <table-filter match-catalog="managermentsystem" match-name="classes"/>
+  <table-filter match-catalog="managermentsystem" match-name="examrecord"/>
+  <table-filter match-catalog="managermentsystem" match-name="headmaster"/>
+  <table-filter match-catalog="managermentsystem" match-name="role"/>
+  <table-filter match-catalog="managermentsystem" match-name="stage"/>
+  <table-filter match-catalog="managermentsystem" match-name="student"/>
+  <table-filter match-catalog="managermentsystem" match-name="supervisor"/>
+  <table-filter match-catalog="managermentsystem" match-name="teacher"/>
+  <table-filter match-catalog="managermentsystem" match-name="user"/>
+</hibernate-reverse-engineering>
